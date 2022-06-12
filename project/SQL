@@ -1,0 +1,52 @@
+./mysql -h localhost -u root -p
+
+CREATE DATABASE ESPS;
+
+USE ESPS;
+
+CREATE TABLE Condition_TABLE(
+    condition_name          VARCHAR(50),
+    lat                     float,
+    lon                     float,
+    alt                     float,
+    Roll                    float,
+    Heading                 float,
+    Pitch                   float,
+    sum_of_human            int,
+    incubation_period       int,
+    treat_willingness       int,
+    isolation_pos           int,
+    infection_area          float,
+    move_area_param         float,
+    first_infected_cnt      int,
+    total_day               int,
+    PRIMARY KEY (condition_name)
+);
+
+CREATE TABLE Normal(
+    condition_name        VARCHAR(50),
+    now_day     int,
+    x     float,
+    y   float
+);
+
+CREATE TABLE infection(
+    condition_name        VARCHAR(50),
+    now_day     int,
+    x     float,
+    y   float
+);
+
+CREATE TABLE sick(
+    condition_name        VARCHAR(50),
+    now_day     int,
+    x     float,
+    y   float
+);
+
+CREATE TABLE isolation_table(
+    condition_name        VARCHAR(50),
+    now_day     int,
+    x     float,
+    y   float
+);
